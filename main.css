@@ -1,0 +1,105 @@
+body, button, html, input, select, textarea {
+
+    font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Noto Sans,Ubuntu,Droid Sans,Helvetica Neue,sans-serif;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 400;
+}
+body {
+  background-color:#0079BF;
+  margin:0px;
+}
+
+.div {
+  display: block;
+}
+
+.board.wrapper {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+.content {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-right: 0;
+  transition: margin .1s ease-in;
+}
+
+.board-header {
+  flex: none;
+  height: auto;
+  padding: 8px 4px 8px 8px;
+  position: relative;
+  color: #172b4d;
+}
+
+.board-header-btn   {
+    cursor: default;
+    display: block;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 32px;
+    padding-left: 4px;
+    padding-right: 2px;
+    text-decoration: none;
+    max-width: calc(100% - 12px);
+    float: left;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    border-radius: 3px;
+    color: #fff;
+    position: relative;
+    height: 32px;
+    line-height: 32px;
+    margin: 0 4px 0 0;
+}
+.board-header-btn:hover {
+  background-color: #005485;
+}
+
+.board-canvas {
+  position: relative;
+  flex-grow: 1;
+}
+
+.board-canvas-inside {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  white-space: nowrap;
+  margin-bottom: 8px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding-bottom: 8px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.list-wrapper:first-child {
+    margin-left: 8px;
+}
+
+.list-wrapper {
+  width: 272px;
+  margin: 0 4px;
+  height: 100%;
+  box-sizing: border-box;
+  display: inline-block;
+  vertical-align: top;
+  white-space: nowrap;
+}
+
+.title {
+  padding-left: 8px;
+  padding-right: 10px;
+}

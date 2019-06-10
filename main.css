@@ -1,16 +1,16 @@
 body, button, html, input, select, textarea {
-
-    font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Noto Sans,Ubuntu,Droid Sans,Helvetica Neue,sans-serif;
-    font-size: 14px;
-    line-height: 20px;
-    font-weight: 400;
+  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Noto Sans,Ubuntu,Droid Sans,Helvetica Neue,sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 400;
 }
+
 body {
   background-color:#0079BF;
   margin:0px;
 }
 
-.div {
+div {
   display: block;
 }
 
@@ -39,25 +39,25 @@ body {
 }
 
 .board-header-btn   {
-    cursor: default;
-    display: block;
-    font-size: 18px;
-    font-weight: 700;
-    line-height: 32px;
-    padding-left: 4px;
-    padding-right: 2px;
-    text-decoration: none;
-    max-width: calc(100% - 12px);
-    float: left;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    border-radius: 3px;
-    color: #fff;
-    position: relative;
-    height: 32px;
-    line-height: 32px;
-    margin: 0 4px 0 0;
+  cursor: default;
+  display: block;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 32px;
+  padding-left: 4px;
+  padding-right: 2px;
+  text-decoration: none;
+  max-width: calc(100% - 12px);
+  float: left;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  border-radius: 3px;
+  color: #fff;
+  position: relative;
+  height: 32px;
+  line-height: 32px;
+  margin: 0 4px 0 0;
 }
 .board-header-btn:hover {
   background-color: #005485;
@@ -79,14 +79,10 @@ body {
   overflow-y: hidden;
   padding-bottom: 8px;
   position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
 }
 
 .list-wrapper:first-child {
-    margin-left: 8px;
+  margin-left: 8px;
 }
 
 .list-wrapper {
@@ -97,6 +93,69 @@ body {
   display: inline-block;
   vertical-align: top;
   white-space: nowrap;
+}
+
+.list-content {
+  background-color: #dfe1e6;
+  border-radius: 3px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  max-height: 100%;
+  position: relative;
+  white-space: normal;
+}
+
+.list-header {
+  flex: 0 0 auto;
+  padding: 10px 8px 8px;
+  position: relative;
+  min-height: 20px;
+}
+
+.list-header-text {
+  background: transparent;
+  border-radius: 3px;
+  box-shadow: none;
+  font-weight: 700;
+  margin: -4px 0;
+  height: 20px;
+  min-height: 20px;
+  padding: 4px 8px;
+  resize: none;
+  max-height: 256px;
+  cursor: pointer;
+}
+
+.list-cards {
+  flex: 1 1 auto;
+  margin-bottom: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  margin: 0 4px;
+  padding: 0 4px;
+  z-index: 1;
+  min-height: 0;
+}
+
+.list-elements {
+  background-color: #fff;
+  border-radius: 3px;
+  box-shadow: 0 1px 0 rgba(9,30,66,.25);
+  cursor: pointer;
+  display: block;
+  margin-bottom: 8px;
+  max-width: 300px;
+  min-height: 20px;
+  position: relative;
+  text-decoration: none;
+  z-index: 0;
+  padding: 6px 8px 2px;
+  overflow: hidden;
+}
+
+.list-elements:hover {
+  background-color:  #F4F5F7;
 }
 
 .title {

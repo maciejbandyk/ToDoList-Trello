@@ -26,10 +26,15 @@ function handleDrop(e) {
     e.stopPropagation();
   }
 
-  if (dragSrcEl != this) {
-    var data = e.dataTransfer.getData("text");
-    e.target.append(document.getElementById(data));
+  var droppable = e.target.classList.contains('list-cards');
+
+  if (droppable) {
+    if (dragSrcEl != this) {
+      var data = e.dataTransfer.getData("text");
+      e.target.append(document.getElementById(data));
+    }
   }
+
   return false;
 }
 

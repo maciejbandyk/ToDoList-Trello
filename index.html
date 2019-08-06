@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Trello-task</title>
-    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link href="fontawesome/css/all.css" rel="stylesheet">
 
 </head>
 <body>
@@ -21,13 +22,24 @@
           <div class="js-list list-wrapper" draggable="true">
             <div class="list list-content">
               <div class="list-header menu">
-                <span class="list-header-text">List Name</span>
+                <span class="list-header-text">List Name1</span>
               </div>
-              <div class="list-cards js-list-cards">
-                <span id="target" class="list-elements" draggable="true">Przykładowy tekst w karcie loremrzykładowy tekst w karcie</span>
-              </div>
-              <div class="js-add-a-card hide">
-                <textarea class="list-card-textarea card-title" dir="auto" placeholder="Enter a title for this card…" style="overflow: hidden; overflow-wrap: break-word; resize: none; height: 54px;"></textarea>
+                  <div class="list-cards js-list-cards">
+                      <div class="event-container">
+                        <span id="target" class="list-elements" draggable="true">Przykładowy tekst w karcie loremrzykładowy tekst w karcie</span>
+                        <i class="fa fa-trash"></i>
+                      </div>
+                  </div>
+              <div class="card-composer hide">
+                <div class="list-cards js-composer">
+                  <div class="list-card-details u-clearfix">
+                      <textarea class="list-card-composer-textarea js-card-title" dir="auto" placeholder="Enter a title for this card…" style="overflow: hidden; overflow-wrap: break-word; resize: none; height: 54px;"></textarea>
+                  </div>
+                </div>
+                <div class="cc-controls list-cards u-clearfix">
+                  <input class="primary confirm mod-compact js-add-card" type="submit" value="Add Card"> 
+                  <a class="icon-lg icon-close dark-hover js-cancel" href="#"></a>
+                </div>
               </div>
               <a class="open-card" href="#">
                 <span class="icon-add"> </span>
@@ -38,13 +50,24 @@
           <div class="js-list list-wrapper" draggable="true">
             <div class="list list-content">
               <div class="list-header menu">
-                <span class="list-header-text">List Name</span>
+                <span class="list-header-text">List Name2</span>
               </div>
               <div class="list-cards js-list-cards">
                 <span id="target1" class="list-elements" draggable="true">Przykładowy tekst w karcie Przykładowy tekst w karciePrzykładowy tekst w karciePrzykładowy tekst w karcie </span>
                 <span id="target2" class="list-elements" draggable="true">Przykładowy tekst w karcie</span>
                 <span id="target3" class="list-elements" draggable="true">Przykładowy tekst w karcie</span>
               </div>
+              <div class="card-composer hide">
+                  <div class="list-cards js-composer">
+                    <div class="list-card-details u-clearfix">
+                        <textarea class="list-card-composer-textarea js-card-title" dir="auto" placeholder="Enter a title for this card…" style="overflow: hidden; overflow-wrap: break-word; resize: none; height: 54px;"></textarea>
+                    </div>
+                  </div>
+                  <div class="cc-controls list-cards u-clearfix">
+                    <input class="primary confirm mod-compact js-add-card" type="submit" value="Add Card"> 
+                    <a class="icon-lg icon-close dark-hover js-cancel" href="#"></a>
+                  </div>
+                </div>
               <a class="open-card" href="#">
                 <span class="icon-add"> </span>
                 <span class="js-add-a-card hide"> </span>
@@ -53,13 +76,24 @@
             </div>
           </div>
           <div class="js-list list-wrapper" draggable="true">
-            <div class="list list-content">
+            <div id="list-3" class="list list-content">
               <div class="list-header menu">
                 <span class="list-header-text">List Name</span>
               </div>
               <div class="list-cards js-list-cards">
                 <span id="target4" class="list-elements" draggable="true">Przykładowy tekst w karcie</span>
               </div>
+              <div class="card-composer hide">
+                  <div class="list-cards js-composer">
+                    <div class="list-card-details u-clearfix">
+                        <textarea class="list-card-composer-textarea js-card-title" dir="auto" placeholder="Enter a title for this card…" style="overflow: hidden; overflow-wrap: break-word; resize: none; height: 54px;"></textarea>
+                    </div>
+                  </div>
+                  <div class="cc-controls list-cards u-clearfix">
+                    <input class="primary confirm mod-compact js-add-card" type="submit" value="Add Card"> 
+                    <a class="icon-lg icon-close dark-hover js-cancel" href="#"></a>
+                  </div>
+                </div>
               <a class="open-card" href="#">
                 <span class="icon-add"> </span>
                 <span class="js-add-a-card hide"> </span>
@@ -71,7 +105,26 @@
       </div>
     </div>
   </div>
-  <script src="dragg.js"></script>
-  <script src="eventadd.js"></script>
+  <script src="js/dragg.js"></script>
+  <script src="js/eventadd.js"></script>
+  <script src="js/task.js"></script>
+  <script src="js/changename.js"></script>
+  <script defer src="fontawesome/js/all.js"></script>
+
+<!-- 
+     <div class="card-composer">
+        <div class="list-cards js-composer">
+          <div class="list-card-details u-clearfix">
+              <textarea class="list-card-composer-textarea js-card-title" dir="auto" placeholder="Enter a title for this card…" style="overflow: hidden; overflow-wrap: break-word; resize: none; height: 54px;"></textarea>
+          </div>
+        </div>
+         <div class="cc-controls list-cards u-clearfix">
+          <input class="primary confirm mod-compact js-add-card" type="submit" value="Add Card"> 
+          <a class="icon-lg icon-close dark-hover js-cancel" href="#"></a>
+            </div>
+     </div>
+   -->
 </body>
 </html>
+
+

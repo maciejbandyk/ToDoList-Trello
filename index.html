@@ -21,84 +21,48 @@
         <div class="board-canvas-inside">
           <div class="js-list list-wrapper" draggable="true">
             <div class="list list-content">
-              <div class="list-header menu">
-                <span class="list-header-text">List Name1</span>
-              </div>
-                  <div class="list-cards js-list-cards">
-                      <div class="event-container">
-                        <span id="target" class="list-elements" draggable="true">Przykładowy tekst w karcie loremrzykładowy tekst w karcie</span>
-                        <i class="fa fa-trash"></i>
-                      </div>
-                  </div>
-              <div class="card-composer hide">
-                <div class="list-cards js-composer">
-                  <div class="list-card-details u-clearfix">
-                      <textarea class="list-card-composer-textarea js-card-title" dir="auto" placeholder="Enter a title for this card…" style="overflow: hidden; overflow-wrap: break-word; resize: none; height: 54px;"></textarea>
-                  </div>
+                <div class="list-header menu">
+                   <span class="list-header-text">List Name1</span>
                 </div>
-                <div class="cc-controls list-cards u-clearfix">
-                  <input class="primary confirm mod-compact js-add-card" type="submit" value="Add Card"> 
-                  <a class="icon-lg icon-close dark-hover js-cancel" href="#"></a>
-                </div>
-              </div>
-              <a class="open-card" href="#">
-                <span class="icon-add"> </span>
-                <span class="add-another-card">Add another card...</span>
-              </a>
-            </div>
-          </div>
-          <div class="js-list list-wrapper" draggable="true">
-            <div class="list list-content">
-              <div class="list-header menu">
-                <span class="list-header-text">List Name2</span>
-              </div>
-              <div class="list-cards js-list-cards">
-                <span id="target1" class="list-elements" draggable="true">Przykładowy tekst w karcie Przykładowy tekst w karciePrzykładowy tekst w karciePrzykładowy tekst w karcie </span>
-                <span id="target2" class="list-elements" draggable="true">Przykładowy tekst w karcie</span>
-                <span id="target3" class="list-elements" draggable="true">Przykładowy tekst w karcie</span>
-              </div>
-              <div class="card-composer hide">
-                  <div class="list-cards js-composer">
-                    <div class="list-card-details u-clearfix">
-                        <textarea class="list-card-composer-textarea js-card-title" dir="auto" placeholder="Enter a title for this card…" style="overflow: hidden; overflow-wrap: break-word; resize: none; height: 54px;"></textarea>
+                     <div id="first-list" class="list-cards js-list-cards">
+                         <!-- Event container -->
+                     </div>
+                <div class="card-composer hide">
+                   <div class="list-cards js-composer">
+                     <div class="list-card-details u-clearfix">
+                         <textarea class="list-card-composer-textarea js-card-title" dir="auto" placeholder="Enter a title for this card…" style="overflow: hidden; overflow-wrap: break-word; resize: none; height: 54px;"></textarea>
+                     </div>
+                   </div>
+                    <div class="cc-controls list-cards u-clearfix">
+                        <input class="primary confirm mod-compact js-add-card" type="submit" value="Add Card"/> 
+                        <a class="icon-lg icon-close dark-hover js-cancel" href="#"></a>
                     </div>
                   </div>
-                  <div class="cc-controls list-cards u-clearfix">
-                    <input class="primary confirm mod-compact js-add-card" type="submit" value="Add Card"> 
-                    <a class="icon-lg icon-close dark-hover js-cancel" href="#"></a>
-                  </div>
-                </div>
-              <a class="open-card" href="#">
-                <span class="icon-add"> </span>
-                <span class="js-add-a-card hide"> </span>
-                <span class="add-another-card">Add another card...</span>
-              </a>
+                    <a class="open-card" href="#">
+                        <span class="icon-add"> </span>
+                        <span class="add-another-card">Add another card...</span>
+                    </a>
             </div>
-          </div>
-          <div class="js-list list-wrapper" draggable="true">
-            <div id="list-3" class="list list-content">
-              <div class="list-header menu">
-                <span class="list-header-text">List Name</span>
-              </div>
-              <div class="list-cards js-list-cards">
-                <span id="target4" class="list-elements" draggable="true">Przykładowy tekst w karcie</span>
-              </div>
-              <div class="card-composer hide">
-                  <div class="list-cards js-composer">
-                    <div class="list-card-details u-clearfix">
-                        <textarea class="list-card-composer-textarea js-card-title" dir="auto" placeholder="Enter a title for this card…" style="overflow: hidden; overflow-wrap: break-word; resize: none; height: 54px;"></textarea>
-                    </div>
-                  </div>
-                  <div class="cc-controls list-cards u-clearfix">
-                    <input class="primary confirm mod-compact js-add-card" type="submit" value="Add Card"> 
-                    <a class="icon-lg icon-close dark-hover js-cancel" href="#"></a>
-                  </div>
+        </div>
+          <div class="add-list list-wrapper mod-add">
+            <a class="open-add-list js-open-add-list" href="#">
+              <span class="placeholder">
+                <span class="icon-sm icon-add">
+                  Add another list
+                </span>
+              </span>
+              
+            </a>
+            <div class="list-composer hide">
+              <div class="list-cards js-composer">
+                <div class="list-card-details u-clearfix">
+                    <textarea class="list-card-composer-textarea js-list-title" dir="auto" placeholder="Enter a title for a list..." style="overflow: hidden; overflow-wrap: break-word; resize: none; height: 54px;"></textarea>
                 </div>
-              <a class="open-card" href="#">
-                <span class="icon-add"> </span>
-                <span class="js-add-a-card hide"> </span>
-                <span class="add-another-card">Add another card...</span>
-              </a>
+              </div>
+              <div class="cc-controls list-cards u-clearfix">
+                <input class="primary confirm mod-compact js-add-list" type="submit" value="Add Card"> 
+                <a id="list-add-cancel" class="icon-lg icon-close dark-hover js-list-cancel" href="#"></a>
+              </div>
             </div>
           </div>
         </div>
@@ -107,23 +71,12 @@
   </div>
   <script src="js/dragg.js"></script>
   <script src="js/eventadd.js"></script>
-  <script src="js/task.js"></script>
+  <script src="js/listadd.js"></script>
+  <script src="js/event.js"></script>
+  <script src="js/list.js"></script>
   <script src="js/changename.js"></script>
   <script defer src="fontawesome/js/all.js"></script>
 
-<!-- 
-     <div class="card-composer">
-        <div class="list-cards js-composer">
-          <div class="list-card-details u-clearfix">
-              <textarea class="list-card-composer-textarea js-card-title" dir="auto" placeholder="Enter a title for this card…" style="overflow: hidden; overflow-wrap: break-word; resize: none; height: 54px;"></textarea>
-          </div>
-        </div>
-         <div class="cc-controls list-cards u-clearfix">
-          <input class="primary confirm mod-compact js-add-card" type="submit" value="Add Card"> 
-          <a class="icon-lg icon-close dark-hover js-cancel" href="#"></a>
-            </div>
-     </div>
-   -->
 </body>
 </html>
 

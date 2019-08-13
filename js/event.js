@@ -1,4 +1,4 @@
-    class TrelloTask {
+    class TrelloEvent {
     constructor(options) {
         this.text = options.text;
         this.node = options.node;
@@ -8,7 +8,7 @@
         this.iElement.innerHTML = this.getiElement();
         this.wrapper.innerHTML = this.getMarkup(options);
         this.wrapper.appendChild(this.iElement);
-        this.renderTask();
+        this.renderEvent();
         this.wrapper.onclick = () => nameChange('list-elements');
         this.iElement.onclick = () => this.deleteEvent();
 
@@ -22,7 +22,7 @@
             return `<i class="fa fa-trash"></i>`;
         }
 
-        renderTask() {
+        renderEvent() {
             let container = this.node;
             container.append(this.wrapper);
         }
@@ -32,3 +32,6 @@
         }
 
     }
+
+    let nodeFirstElement = document.getElementById('first-list');
+    new TrelloEvent({text: "Przykladowy tekst w Twojej karcie", node: nodeFirstElement});

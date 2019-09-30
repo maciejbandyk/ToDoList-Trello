@@ -32,6 +32,3 @@
         }
 
     }
-
-    let nodeFirstElement = document.getElementById('first-list');
-    new TrelloEvent({text: "Przykladowy tekst w Twojej karcie", node: nodeFirstElement});

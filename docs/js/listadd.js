@@ -18,7 +18,6 @@ Object.entries(targetAddListButton).map((object) => {
     object[1].addEventListener('click', () => {
         let node = object[1].parentElement.parentElement.previousElementSibling;
         let text = object[1].parentElement.previousElementSibling.firstElementChild.firstElementChild.value
-
         let newList = new TrelloList({name: text});
         object[1].parentElement.previousElementSibling.firstElementChild.firstElementChild.value = '';
     })

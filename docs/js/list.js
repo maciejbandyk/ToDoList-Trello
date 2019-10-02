@@ -3,7 +3,6 @@ class TrelloList {
         this.name = options.name;
         this.buildList();
         this.renderListElement();
-        eventListeners();
     }
     
     buildList() {
@@ -29,7 +28,7 @@ class TrelloList {
               </div>
                 <a class="open-card" href="#">
                     <span class="icon-add"> </span>
-                    <span class="add-another-card">Add another card...</span>
+                    Add another card...
                 </a>
             </div>`
 
@@ -42,7 +41,6 @@ class TrelloList {
         let node = document.getElementsByClassName('board-canvas-inside').item(0);
         let lastElement = document.getElementsByClassName('add-list').item(0);
         node.insertBefore(this.wrapper, lastElement);
-        refreshTargets();
     }  
 }
 

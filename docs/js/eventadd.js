@@ -1,39 +1,20 @@
-let targetAddEvent = document.getElementsByClassName("open-card");
-let targetCardComposer = document.getElementsByClassName("card-composer");
-let targetClosingAddEvent = document.getElementsByClassName("js-cancel");
-let targetAddCardButton = document.getElementsByClassName("js-add-card");
+let boardCanvas = document.querySelector('.board-canvas-inside');
+boardCanvas = addEventListener('click', (ev) => {
+    if (ev.target.classList.contains("open-card") == true) {
+            ev.target.classList += ' hide';
+            ev.target.previousElementSibling.classList.remove("hide");
+    }
 
-function refreshTargets() {
-    targetAddEvent = document.getElementsByClassName("open-card");
-    targetCardComposer = document.getElementsByClassName("card-composer");
-    targetClosingAddEvent = document.getElementsByClassName("js-cancel");
-    targetAddCardButton = document.getElementsByClassName("js-add-card");
-}
+    if (ev.target.classList.contains("js-cancel") == true) {
+        ev.target.parentElement.parentElement.nextElementSibling.classList.remove("hide");
+        ev.target.parentElement.parentElement.classList += " hide";
+    }
 
-function eventListeners() {
-    Object.entries(targetAddEvent).map((object) => {
-        object[1].addEventListener('click', () => {
-            object[1].classList += ' hide';
-            object[1].previousElementSibling.classList.remove("hide");
-        })
-    });
-
-    Object.entries(targetClosingAddEvent).map((object) => {
-        object[1].addEventListener('click', () => {
-            object[1].parentElement.parentElement.nextElementSibling.classList.remove("hide");
-            object[1].parentElement.parentElement.classList += " hide";
-        })
-    });
-
-    Object.entries(targetAddCardButton).map((object) => {
-        object[1].addEventListener('click', () => {
-            let node = object[1].parentElement.parentElement.previousElementSibling;
-            let text = object[1].parentElement.previousElementSibling.firstElementChild.firstElementChild.value
-            let newEvent = new TrelloEvent({text: text, node: node});
-            newEvent.renderEvent();
-            //reset textarea value after adding new event
-            object[1].parentElement.previousElementSibling.firstElementChild.firstElementChild.value = '';
-            targetIconRemoveEvent = document.getElementsByClassName("fa-trash");
-        })
-    });
-}
+    if (ev.target.classList.contains("js-add-card") == true) {
+        const node = ev.target.parentElement.parentElement.previousElementSibling;
+        const text = ev.target.parentElement.previousElementSibling.firstElementChild.firstElementChild.value
+        const newEvent = new TrelloEvent({text: text, node: node});
+        newEvent.renderEvent();
+        ev.target.parentElement.previousElementSibling.firstElementChild.firstElementChild.value = '';
+    }
+})

@@ -9,22 +9,21 @@ function nameChange(className) {
             let textBefore = object[1].innerHTML;
             object[1].innerHTML = '<input id="input-namechange" type="text" name="name-chage" autofocus>';
             let inputField = document.getElementById('input-namechange');
-            inputField.onfocus = function() {
+            inputField.onfocus = function () {
                 object[1].removeEventListener('click', renderInput);
-                object[1].addEventListener('keypress', function(e) {
-                    let key = e.which   ||  e.keyCode;
+                object[1].addEventListener('keypress', function (e) {
+                    let key = e.which || e.keyCode;
                     if (key == 13) {
                         if (inputField.value !== "") {
-                            object[1].innerHTML = inputField.value;  
-                        } 
-                        else {
-                        object[1].innerHTML = textBefore;
+                            object[1].innerHTML = inputField.value;
+                        } else {
+                            object[1].innerHTML = textBefore;
                         }
                         object[1].addEventListener('click', renderInput);
                     }
                 });
             };
-        }); 
+        });
     });
 }
 
@@ -35,20 +34,19 @@ Object.entries(targetToChange).map((object) => {
         let textBefore = object[1].innerHTML;
         object[1].innerHTML = '<input id="input-namechange" type="text" name="name-chage" autofocus>';
         let inputField = document.getElementById('input-namechange');
-        inputField.onfocus = function() {
+        inputField.onfocus = function () {
             object[1].removeEventListener('click', renderInput);
-            object[1].addEventListener('keypress', function(e) {
-                let key = e.which   ||  e.keyCode;
+            object[1].addEventListener('keypress', function (e) {
+                let key = e.which || e.keyCode;
                 if (key == 13) {
                     if (inputField.value !== "") {
-                        object[1].innerHTML = inputField.value;  
-                    } 
-                    else {
-                    object[1].innerHTML = textBefore;
+                        object[1].innerHTML = inputField.value;
+                    } else {
+                        object[1].innerHTML = textBefore;
                     }
                     object[1].addEventListener('click', renderInput);
                 }
             });
         };
-    }); 
+    });
 });

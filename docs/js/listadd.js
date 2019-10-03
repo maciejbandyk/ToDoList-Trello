@@ -1,7 +1,4 @@
 const targetListAdd = document.getElementsByClassName('js-open-add-list');
-const targetAddListButton = document.getElementsByClassName("js-add-list");
-const targetJsListCancel = document.getElementById("list-add-cancel");
-
 Object.entries(targetListAdd).map((object) => {
     object[1].addEventListener('click', () => {
         object[1].classList += ' hide';
@@ -9,16 +6,20 @@ Object.entries(targetListAdd).map((object) => {
     })
 })
 
-targetJsListCancel.onclick = () => {
-    targetJsListCancel.parentElement.parentElement.previousElementSibling.classList.remove("hide");
-    targetJsListCancel.parentElement.parentElement.classList += ' hide';
-}
+let boardCanvass = document.querySelector('.board-canvas-inside');
+boardCanvass = addEventListener('click', (ev) => {
 
-Object.entries(targetAddListButton).map((object) => {
-    object[1].addEventListener('click', () => {
-        let node = object[1].parentElement.parentElement.previousElementSibling;
-        let text = object[1].parentElement.previousElementSibling.firstElementChild.firstElementChild.value
-        let newList = new TrelloList({name: text});
-        object[1].parentElement.previousElementSibling.firstElementChild.firstElementChild.value = '';
-    })
+    if (ev.target.classList.contains("js-list-cancel") == true) {
+        ev.target.parentElement.parentElement.previousElementSibling.classList.remove("hide");
+        ev.target.parentElement.parentElement.classList += ' hide';
+    }
+
+    if (ev.target.classList.contains("js-add-list") == true) {
+        const node = ev.target.parentElement.parentElement.previousElementSibling;
+        const text = ev.target.parentElement.previousElementSibling.firstElementChild.firstElementChild.value;
+        const newList = new TrelloList({
+            name: text
+        });
+        ev.target.parentElement.previousElementSibling.firstElementChild.firstElementChild.value = '';
+    }
 });

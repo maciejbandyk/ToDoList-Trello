@@ -1,19 +1,23 @@
+let NewIdOfEventContainer = 0;
 class TrelloList {
     constructor(options) {
         this.name = options.name;
+        this.id = NewIdOfEventContainer;
         this.buildList();
         this.renderListElement();
+        getEventsSortable(this.id);
+        this.id = NewIdOfEventContainer++;
     }
-    
+
     buildList() {
         this.wrapper = document.createElement('div');
         this.wrapper.className = "js-list list-wrapper";
-        this.markup = 
-        `<div class="list list-content">
+        this.markup =
+            `<div class="list list-content">
             <div class="list-header menu">
                <span class="list-header-text">${this.name}</span>
             </div>
-                 <div class="list-cards js-list-cards">
+                 <div id="${this.id}" class="list-cards js-list-cards">
                  </div>
             <div class="card-composer hide">
                <div class="list-cards js-composer">
@@ -34,15 +38,20 @@ class TrelloList {
 
         this.wrapper.innerHTML = this.markup;
         let ListEventSpace = this.wrapper.firstElementChild.firstElementChild.nextElementSibling;
-        new TrelloEvent({text: "Przykładowy tekst w karcie", node: ListEventSpace});        
+        new TrelloEvent({
+            text: "Przykładowy tekst w karcie",
+            node: ListEventSpace
+        });
     }
 
     renderListElement() {
         let node = document.getElementsByClassName('board-canvas-inside').item(0);
         let lastElement = document.getElementsByClassName('add-list').item(0);
         node.insertBefore(this.wrapper, lastElement);
-    }  
+    }
 }
 
 //GENERATE FIRST LIST AND EVENT
-new TrelloList({name: "First List"});
+new TrelloList({
+    name: "First List"
+});

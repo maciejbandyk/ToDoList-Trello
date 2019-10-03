@@ -1,19 +1,17 @@
     class TrelloEvent {
-    constructor(options) {
-        this.text = options.text;
-        this.node = options.node;
-        this.wrapper = document.createElement('div');
-        this.wrapper.classList += "event-container";
-        this.iElement = document.createElement('span');
-        this.iElement.innerHTML = this.getiElement();
-        this.wrapper.innerHTML = this.getMarkup(options);
-        this.wrapper.appendChild(this.iElement);
-        this.renderEvent();
-        this.wrapper.onclick = () => nameChange('list-elements');
-        this.iElement.onclick = () => this.deleteEvent();
-
-
-    }
+        constructor(options) {
+            this.text = options.text;
+            this.node = options.node;
+            this.wrapper = document.createElement('div');
+            this.wrapper.classList += "event-container";
+            this.iElement = document.createElement('span');
+            this.iElement.innerHTML = this.getiElement();
+            this.wrapper.innerHTML = this.getMarkup(options);
+            this.wrapper.appendChild(this.iElement);
+            this.renderEvent();
+            this.wrapper.onclick = () => nameChange('list-elements');
+            this.iElement.onclick = () => this.deleteEvent();
+        }
         getMarkup(options) {
             return `<span class="list-elements" draggable="true">${options.text}</span>`;
         }

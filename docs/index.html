@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Trello-task</title>
-    <link rel="stylesheet" href="css/main.css">
-    <link href="fontawesome/css/all.css" rel="stylesheet">
 
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Trello-task</title>
+  <link rel="stylesheet" href="css/main.css">
+  <link href="fontawesome/css/all.css" rel="stylesheet">
 </head>
+
 <body>
   <div class="board-wrapper">
     <div class="content">
@@ -18,9 +19,9 @@
         </div>
       </div>
       <div class="board-canvas">
-        <div class="board-canvas-inside">
+        <div id="board-canvas-ins" class="board-canvas-inside">
           <div class="add-list list-wrapper mod-add">
-            <a class="open-add-list js-open-add-list" href="#">
+            <a class="list-wrapper open-add-list js-open-add-list" href="#">
               <span class="placeholder">
                 <span class="icon-sm icon-add">
                   Add another list
@@ -30,11 +31,13 @@
             <div class="list-composer hide">
               <div class="list-cards js-composer">
                 <div class="list-card-details u-clearfix">
-                    <textarea class="list-card-composer-textarea js-list-title" dir="auto" placeholder="Enter a title for a list..." style="overflow: hidden; overflow-wrap: break-word; resize: none; height: 54px;"></textarea>
+                  <textarea class="list-card-composer-textarea js-list-title" dir="auto"
+                    placeholder="Enter a title for a list..."
+                    style="overflow: hidden; overflow-wrap: break-word; resize: none; height: 54px;"></textarea>
                 </div>
               </div>
               <div class="cc-controls list-cards u-clearfix">
-                <input class="primary confirm mod-compact js-add-list" type="submit" value="Add List"> 
+                <input class="primary confirm mod-compact js-add-list" type="submit" value="Add List">
                 <a id="list-add-cancel" class="icon-lg icon-close dark-hover js-list-cancel" href="#"></a>
               </div>
             </div>
@@ -43,15 +46,15 @@
       </div>
     </div>
   </div>
-  <script src="js/dragg.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
   <script src="js/eventadd.js"></script>
   <script src="js/listadd.js"></script>
   <script src="js/event.js"></script>
+  <script src="js/sortable.js"></script>
   <script src="js/list.js"></script>
   <script src="js/changename.js"></script>
   <script defer src="fontawesome/js/all.js"></script>
 
 </body>
+
 </html>
-
-
